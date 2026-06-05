@@ -13,12 +13,6 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Nathan made the entire filming process simple. We looked professional on camera and finally have content we are proud to share.",
-    author: "Placeholder Client",
-    role: "Regional Service Business"
-  },
-  {
-    quote:
       "The final edit captured the energy of our event perfectly. Fast turnaround and great communication from start to finish.",
     author: "Placeholder Event Client",
     role: "Private Event"

@@ -54,7 +54,7 @@ import { site } from "../data/site";
 			</div>
 			<div class="embed">
 				<iframe
-					src="https://www.youtube.com/embed/galHOoq0FsE"
+					src="https://www.youtube.com/embed/RK-qGobEwyc"
 					title="Featured video"
 					loading="lazy"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -72,7 +72,7 @@ import { site } from "../data/site";
 				title="Trusted by businesses that care about quality."
 			/>
 			<div class="testimonials-grid">
-				{testimonials.slice(0, 2).map((entry) => <TestimonialCard {...entry} />)}
+				{testimonials.slice(0, 1).map((entry) => <TestimonialCard {...entry} />)}
 			</div>
 			<a href="/testimonials" class="button secondary">Read More Testimonials</a>
 		</div>
@@ -104,7 +104,7 @@ import { site } from "../data/site";
 	}
 
 	.testimonials-grid {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: minmax(0, 1fr);
 	}
 
 	.tone {
