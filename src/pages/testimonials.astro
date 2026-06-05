@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import { testimonials } from "../data/testimonials";
+---
+
+<Layout title="Testimonials | Winklepleck Media" description="Client feedback for Winklepleck Media production and consulting services.">
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        kicker="Testimonials"
+        title="Client words that reflect the quality of the process."
+        lead="Real feedback builds confidence. Additional testimonials can be added in a single data file as your portfolio grows."
+      />
+      <div class="grid">
+        {testimonials.map((entry) => <TestimonialCard {...entry} />)}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .grid {
+    margin-top: 1.4rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 780px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

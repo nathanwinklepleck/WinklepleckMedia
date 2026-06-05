@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ContactForm from "../components/ContactForm.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import { testimonials } from "../data/testimonials";
+import { site } from "../data/site";
+---
+
+<Layout title="Contact | Winklepleck Media" description="Book a consultation or request videography services with Winklepleck Media.">
+  <section class="section">
+    <div class="container split">
+      <div>
+        <SectionHeading
+          kicker="Start a Project"
+          title="Tell us what you need and we will build the right package."
+          lead="Share your timeline, goals, and budget range. You'll receive a clear next step and a practical recommendation."
+        />
+        <div class="contact-block reveal delay-1">
+          <p><strong>Email:</strong> <a href={`mailto:${site.email}`}>{site.email}</a></p>
+          <p><strong>Phone:</strong> <a href={`tel:${site.phone}`}>{site.phone}</a></p>
+          <p><strong>Location:</strong> {site.location}</p>
+        </div>
+        <TestimonialCard {...testimonials[0]} />
+      </div>
+      <ContactForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .split {
+    display: grid;
+    gap: 1.4rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .contact-block {
+    margin-bottom: 1rem;
+  }
+
+  .contact-block p {
+    margin: 0.35rem 0;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 860px) {
+    .split {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

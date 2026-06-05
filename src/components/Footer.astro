@@ -1,0 +1,63 @@
+---
+import { site } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container grid">
+    <div>
+      <p class="name">{site.businessName}</p>
+      <p>{site.location}</p>
+    </div>
+    <div>
+      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p><a href={`tel:${site.phone}`}>{site.phone}</a></p>
+    </div>
+    <div>
+      <p><a href={site.youtubeUrl} target="_blank" rel="noreferrer">YouTube</a></p>
+      <p><a href={site.instagramUrl} target="_blank" rel="noreferrer">Instagram</a></p>
+    </div>
+  </div>
+  <div class="container meta">© {year} {site.businessName}. All rights reserved.</div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-line);
+    background: rgba(255, 255, 255, 0.55);
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-bottom: 1.7rem;
+  }
+
+  .name {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  p {
+    margin: 0.3rem 0;
+    color: var(--color-muted);
+  }
+
+  .meta {
+    border-top: 1px solid var(--color-line);
+    padding: 1rem 0 1.8rem;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 780px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

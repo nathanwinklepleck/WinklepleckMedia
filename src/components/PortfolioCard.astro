@@ -1,0 +1,68 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  description: string;
+  result: string;
+  videoUrl?: string;
+}
+
+const { title, category, description, result, videoUrl } = Astro.props;
+---
+
+<article class="portfolio-item reveal">
+  <p class="category">{category}</p>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <p class="result">{result}</p>
+  {videoUrl && (
+    <p class="watch-wrap">
+      <a class="watch-link" href={videoUrl} target="_blank" rel="noreferrer">Watch Project</a>
+    </p>
+  )}
+</article>
+
+<style>
+  .portfolio-item {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-sm);
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  .category {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.74rem;
+    color: var(--color-accent-deep);
+    font-weight: 700;
+  }
+
+  h3 {
+    margin: 0.45rem 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-muted);
+  }
+
+  .result {
+    margin-top: 0.7rem;
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+
+  .watch-wrap {
+    margin-top: 0.9rem;
+  }
+
+  .watch-link {
+    font-weight: 700;
+    color: var(--color-accent-deep);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+</style>

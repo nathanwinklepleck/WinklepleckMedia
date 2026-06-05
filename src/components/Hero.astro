@@ -1,0 +1,107 @@
+---
+import { site } from "../data/site";
+---
+
+<section class="hero section">
+  <div class="container hero-grid">
+    <div>
+      <p class="kicker reveal">Videography and Social Strategy</p>
+      <h1 class="reveal delay-1">Elegant media that helps people trust your story.</h1>
+      <p class="lead reveal delay-2">
+        {site.owner} brings creator-level storytelling and business-first strategy to every project, from
+        polished testimonial films to complete content systems for growing brands.
+      </p>
+      <div class="actions reveal delay-2">
+        <a class="button primary" href="/contact">Book a Consultation</a>
+        <a class="button secondary" href="/portfolio">View Portfolio</a>
+      </div>
+      <p class="stat reveal delay-2">{site.youtubeStat} on YouTube, with practical social insights your team can apply.</p>
+    </div>
+    <div class="card reveal delay-2" aria-hidden="true">
+      <p>Featured Services</p>
+      <ul>
+        <li>Social media consulting</li>
+        <li>Full-production videography</li>
+        <li>Business testimonials</li>
+        <li>Weddings and family events</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 6.3rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    align-items: start;
+    gap: 2rem;
+    grid-template-columns: 1.25fr 0.75fr;
+  }
+
+  h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(2.4rem, 5.4vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: 0.01em;
+  }
+
+  .lead {
+    max-width: 58ch;
+    margin-top: 1rem;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+  }
+
+  .actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .stat {
+    margin-top: 1rem;
+    font-size: 0.92rem;
+    color: var(--color-accent-deep);
+    font-weight: 700;
+  }
+
+  .card {
+    border-radius: var(--radius);
+    background: linear-gradient(155deg, #171512, #2b241d);
+    color: #f4ece2;
+    border: 1px solid #3f352c;
+    padding: 1.35rem;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card p {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-size: 0.78rem;
+  }
+
+  .card ul {
+    margin: 0.8rem 0 0;
+    padding-left: 1rem;
+  }
+
+  .card li + li {
+    margin-top: 0.45rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding-top: 4.8rem;
+    }
+  }
+</style>

@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { site } from "../data/site";
+---
+
+<Layout title="About | Winklepleck Media" description="Meet Nathan Winklepleck, videographer, YouTuber, and social media consultant.">
+  <section class="section">
+    <div class="container split">
+      <div>
+        <SectionHeading
+          kicker="About Nathan"
+          title="A creator mindset with a business-first process."
+          lead={`${site.owner} is a videographer and social media expert known for practical strategy and polished production. With ${site.youtubeStat}, he brings tested audience insight to every client project.`}
+        />
+        <p class="copy reveal delay-1">
+          Winklepleck Media helps businesses show what they do clearly and confidently, using content that builds trust quickly.
+          Projects are handled with close collaboration, clear communication, and a high standard for visual quality.
+        </p>
+        <p class="copy reveal delay-2">
+          The same process also extends to personal projects, including wedding and family event films, where emotional storytelling
+          matters just as much as technical execution.
+        </p>
+      </div>
+      <aside class="panel reveal delay-2">
+        <h3>Approach</h3>
+        <ul>
+          <li>Listen first, then design a practical content plan.</li>
+          <li>Capture with intention so footage supports your message.</li>
+          <li>Edit for clarity, story, and platform performance.</li>
+        </ul>
+        <a href={site.youtubeUrl} target="_blank" rel="noreferrer" class="button secondary">View YouTube Channel</a>
+      </aside>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .split {
+    display: grid;
+    gap: 1.4rem;
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .copy {
+    color: var(--color-muted);
+    max-width: 70ch;
+  }
+
+  .panel {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.72);
+    padding: 1.3rem;
+    height: fit-content;
+  }
+
+  .panel h3 {
+    margin-top: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.75rem;
+  }
+
+  .panel ul {
+    margin-top: 0.7rem;
+    padding-left: 1.1rem;
+  }
+
+  .panel li + li {
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 860px) {
+    .split {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

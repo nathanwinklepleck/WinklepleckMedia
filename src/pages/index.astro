@@ -1,11 +1,174 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import PortfolioCard from "../components/PortfolioCard.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import { services } from "../data/services";
+import { portfolioItems } from "../data/portfolio";
+import { testimonials } from "../data/testimonials";
+import { site } from "../data/site";
 ---
 
 <Layout>
-	<Welcome />
+	<Hero />
+
+	<section class="section">
+		<div class="container">
+			<SectionHeading
+				kicker="Services"
+				title="Production that looks premium and performs like strategy."
+				lead="Whether you need a single flagship video or a complete content foundation, each project is designed to elevate trust and clarify your message."
+			/>
+			<div class="service-grid">
+				{services.slice(0, 3).map((service) => <ServiceCard {...service} />)}
+			</div>
+			<a href="/services" class="button secondary">Explore All Services</a>
+		</div>
+	</section>
+
+	<section class="section tone">
+		<div class="container">
+			<SectionHeading
+				kicker="Selected Work"
+				title="A portfolio built around outcomes, not just pretty shots."
+				lead="Recent work includes business storytelling films, testimonial production, and strategic content for local brands."
+			/>
+			<div class="portfolio-grid">
+				{portfolioItems.slice(0, 4).map((item) => <PortfolioCard {...item} />)}
+			</div>
+			<a href="/portfolio" class="button secondary">See Full Portfolio</a>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container split">
+			<div>
+				<SectionHeading
+					kicker="Creator Credibility"
+					title="A proven YouTube presence that informs every client strategy."
+					lead={`${site.owner} has grown a ${site.youtubeStat} channel by understanding attention, story pacing, and audience behavior. Those same principles guide client work.`}
+				/>
+				<a href={site.youtubeUrl} target="_blank" rel="noreferrer" class="button primary">Visit YouTube Channel</a>
+			</div>
+			<div class="embed">
+				<iframe
+					src="https://www.youtube.com/embed/galHOoq0FsE"
+					title="Featured video"
+					loading="lazy"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+				></iframe>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<SectionHeading
+				kicker="Client Feedback"
+				title="Trusted by businesses that care about quality."
+			/>
+			<div class="testimonials-grid">
+				{testimonials.slice(0, 2).map((entry) => <TestimonialCard {...entry} />)}
+			</div>
+			<a href="/testimonials" class="button secondary">Read More Testimonials</a>
+		</div>
+	</section>
+
+	<section class="section cta">
+		<div class="container cta-box reveal">
+			<h2>Ready to create media that actually moves your business forward?</h2>
+			<a class="button primary" href="/contact">Start Your Project</a>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.service-grid,
+	.portfolio-grid,
+	.testimonials-grid {
+		display: grid;
+		gap: 1rem;
+		margin: 1.35rem 0;
+	}
+
+	.service-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.portfolio-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.testimonials-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.tone {
+		background: rgba(255, 255, 255, 0.55);
+		border-top: 1px solid var(--color-line);
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	.split {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+		align-items: center;
+	}
+
+	.embed iframe {
+		width: 100%;
+		min-height: 320px;
+		border: 0;
+		border-radius: var(--radius);
+		box-shadow: var(--shadow-soft);
+	}
+
+	.cta {
+		padding-top: 1rem;
+	}
+
+	.cta-box {
+		border-radius: var(--radius);
+		border: 1px solid #3f352c;
+		background: linear-gradient(140deg, #1f1b17, #30261f);
+		color: #f8efe5;
+		padding: clamp(1.4rem, 4vw, 2.4rem);
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.cta-box h2 {
+		margin: 0;
+		font-family: "Cormorant Garamond", Georgia, serif;
+		font-size: clamp(1.7rem, 3vw, 2.5rem);
+		max-width: 18ch;
+		line-height: 1.1;
+	}
+
+	@media (max-width: 960px) {
+		.service-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 780px) {
+		.service-grid,
+		.portfolio-grid,
+		.testimonials-grid,
+		.split {
+			grid-template-columns: 1fr;
+		}
+
+		.embed iframe {
+			min-height: 240px;
+		}
+	}
+</style>

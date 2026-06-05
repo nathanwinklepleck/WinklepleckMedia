@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { services } from "../data/services";
+---
+
+<Layout title="Services | Winklepleck Media" description="Social media consulting, full-production videography, testimonial films, and weddings/events coverage.">
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        kicker="Services"
+        title="Professional media support built around your goals."
+        lead="Each offering can be delivered as a standalone package or bundled into a longer-term content partnership."
+      />
+      <div class="grid">
+        {services.map((service) => <ServiceCard {...service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section weddings">
+    <div class="container inner reveal">
+      <h2 class="section-title">Weddings and Family Events</h2>
+      <p class="section-lead">
+        For personal events, the focus is simple: present the day beautifully while preserving the moments that matter most.
+        Coverage is unobtrusive, cinematic, and edited with a timeless style.
+      </p>
+      <a class="button primary" href="/contact">Check Event Availability</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .grid {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .weddings {
+    border-top: 1px solid var(--color-line);
+    background: rgba(255, 255, 255, 0.53);
+  }
+
+  .inner {
+    max-width: 76ch;
+  }
+
+  @media (max-width: 780px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

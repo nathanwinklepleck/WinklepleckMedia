@@ -1,0 +1,86 @@
+---
+const action = "https://api.web3forms.com/submit";
+---
+
+<form class="contact-form" action={action} method="POST">
+  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+  <input type="hidden" name="subject" value="New inquiry from Winklepleck Media website" />
+  <input type="hidden" name="from_name" value="Winklepleck Media Website" />
+
+  <label>
+    Name
+    <input type="text" name="name" required />
+  </label>
+
+  <label>
+    Email
+    <input type="email" name="email" required />
+  </label>
+
+  <label>
+    Phone (optional)
+    <input type="tel" name="phone" />
+  </label>
+
+  <label>
+    Service Needed
+    <select name="service" required>
+      <option value="">Select one</option>
+      <option>Social Media Consulting</option>
+      <option>Full-Production Videography</option>
+      <option>Testimonial Films</option>
+      <option>Weddings / Family Events</option>
+      <option>Other</option>
+    </select>
+  </label>
+
+  <label>
+    Project Details
+    <textarea name="message" rows="6" required></textarea>
+  </label>
+
+  <button class="button primary" type="submit">Send Inquiry</button>
+  <p class="note">
+    Replace <code>YOUR_WEB3FORMS_ACCESS_KEY</code> with your real key before going live.
+  </p>
+</form>
+
+<style>
+  .contact-form {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    background: rgba(255, 255, 255, 0.74);
+    display: grid;
+    gap: 0.95rem;
+  }
+
+  label {
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--color-line);
+    padding: 0.7rem 0.8rem;
+    font: inherit;
+    background: #fff;
+  }
+
+  .note {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.84rem;
+  }
+
+  code {
+    font-family: "Courier New", monospace;
+    font-size: 0.8rem;
+  }
+</style>
