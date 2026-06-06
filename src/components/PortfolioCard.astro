@@ -5,9 +5,10 @@ interface Props {
   description: string;
   result: string;
   videoUrl?: string;
+  siteUrl?: string;
 }
 
-const { title, category, description, result, videoUrl } = Astro.props;
+const { title, category, description, result, videoUrl, siteUrl } = Astro.props;
 ---
 
 <article class="portfolio-item reveal">
@@ -18,6 +19,11 @@ const { title, category, description, result, videoUrl } = Astro.props;
   {videoUrl && (
     <p class="watch-wrap">
       <a class="watch-link" href={videoUrl} target="_blank" rel="noreferrer">Watch Project</a>
+    </p>
+  )}
+  {siteUrl && (
+    <p class="watch-wrap">
+      <a class="watch-link" href={siteUrl} target="_blank" rel="noreferrer">Visit Website</a>
     </p>
   )}
 </article>

@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import PortfolioCard from "../components/PortfolioCard.astro";
+import WorkSample from "../components/WorkSample.astro";
 import TestimonialCard from "../components/TestimonialCard.astro";
 import { services } from "../data/services";
 import { portfolioItems } from "../data/portfolio";
@@ -32,11 +33,11 @@ import { site } from "../data/site";
 		<div class="container">
 			<SectionHeading
 				kicker="Selected Work"
-				title="A portfolio built around outcomes, not just pretty shots."
-				lead="Recent work includes business storytelling films, testimonial production, and strategic content for local brands."
+				title="Real work samples visitors can watch and explore immediately."
+				lead="Featured examples include embedded video work and a live website preview so potential clients can evaluate the quality without leaving the page."
 			/>
-			<div class="portfolio-grid">
-				{portfolioItems.slice(0, 4).map((item) => <PortfolioCard {...item} />)}
+			<div class="showcase-grid">
+				{portfolioItems.slice(0, 3).map((item) => <WorkSample {...item} />)}
 			</div>
 			<a href="/portfolio" class="button secondary">See Full Portfolio</a>
 		</div>
@@ -99,7 +100,8 @@ import { site } from "../data/site";
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 
-	.portfolio-grid {
+	.portfolio-grid,
+	.showcase-grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
@@ -162,6 +164,7 @@ import { site } from "../data/site";
 	@media (max-width: 780px) {
 		.service-grid,
 		.portfolio-grid,
+		.showcase-grid,
 		.testimonials-grid,
 		.split {
 			grid-template-columns: 1fr;
