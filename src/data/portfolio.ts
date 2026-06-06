@@ -17,6 +17,14 @@ export const portfolioItems: PortfolioItem[] = [
     videoUrl: "https://youtu.be/galHOoq0FsE"
   },
   {
+    title: "Church Event Video Shoot",
+    category: "Event Videography",
+    description:
+      "Event coverage produced for a church gathering on June 5, 2026, focused on capturing atmosphere, key moments, and community engagement.",
+    result: "Delivered a polished recap video suitable for social sharing and future event promotion.",
+    videoUrl: "https://youtu.be/binOxLmxK24"
+  },
+  {
     title: "Matthew's Woodworking Promotional Video",
     category: "Business Storytelling",
     description:
