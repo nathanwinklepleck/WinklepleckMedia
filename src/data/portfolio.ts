@@ -31,33 +31,5 @@ export const portfolioItems: PortfolioItem[] = [
       "Marketing website for Waymaker Renovations, built to showcase services, trust signals, project photography, and local lead generation in Indianapolis-area markets.",
     result: "Created a clean, conversion-focused website with strong service presentation and direct contact paths.",
     siteUrl: "https://waymakerindy.com/"
-  },
-  {
-    title: "Customer Testimonial Series",
-    category: "Testimonial Production",
-    description:
-      "A set of customer interview videos shaped into trust-building assets for ads and sales pages.",
-    result: "Clearer trust signals and increased lead form submissions."
-  },
-  {
-    title: "Wedding Highlight Film",
-    category: "Events",
-    description:
-      "Cinematic wedding coverage focused on real moments, family emotion, and story pacing.",
-    result: "A timeless keepsake and share-ready recap for family and friends."
-  },
-  {
-    title: "Professional Services Promo",
-    category: "Commercial",
-    description:
-      "On-location shoot and edit package for a service business entering a new market.",
-    result: "Sharper brand positioning and improved proposal close quality."
-  },
-  {
-    title: "Community Event Recap",
-    category: "Events",
-    description:
-      "Fast-turnaround recap video crafted for social posting and sponsor follow-up.",
-    result: "Extended event visibility and stronger sponsor retention conversations."
   }
 ];

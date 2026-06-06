@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
-import PortfolioCard from "../components/PortfolioCard.astro";
+import WorkSample from "../components/WorkSample.astro";
 import { portfolioItems } from "../data/portfolio";
 ---
 
@@ -10,11 +10,11 @@ import { portfolioItems } from "../data/portfolio";
     <div class="container">
       <SectionHeading
         kicker="Portfolio"
-        title="Selected work across business storytelling and events."
-        lead="Featured projects include client testimonial and promotional films with direct links so visitors can watch the work immediately."
+        title="Selected client work visitors can experience directly on the page."
+        lead="Current featured samples include two embedded video projects and one live website preview so prospects can evaluate the work immediately."
       />
       <div class="grid">
-        {portfolioItems.map((item) => <PortfolioCard {...item} />)}
+        {portfolioItems.map((item) => <WorkSample {...item} />)}
       </div>
     </div>
   </section>
@@ -25,13 +25,7 @@ import { portfolioItems } from "../data/portfolio";
     margin-top: 1.4rem;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  @media (max-width: 980px) {
-    .grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   @media (max-width: 780px) {
