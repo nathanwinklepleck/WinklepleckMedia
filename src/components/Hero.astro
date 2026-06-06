@@ -3,57 +3,86 @@ import { site } from "../data/site";
 ---
 
 <section class="hero section">
-  <div class="container hero-grid">
-    <div>
-      <p class="kicker reveal">Videography and Social Strategy</p>
-      <h1 class="reveal delay-1">Elegant media that helps people trust your story.</h1>
-      <p class="lead reveal delay-2">
-        {site.owner} brings creator-level storytelling and business-first strategy to every project, from
-        polished testimonial films to complete content systems for growing brands.
-      </p>
-      <div class="actions reveal delay-2">
-        <a class="button primary" href="/contact">Book a Consultation</a>
-        <a class="button secondary" href="/portfolio">View Portfolio</a>
-      </div>
-      <p class="stat reveal delay-2">{site.youtubeStat} on YouTube, with practical social insights your team can apply.</p>
+  <div class="container hero-shell">
+    <div class="badge reveal">
+      <img src="/photos/Nathan.png" alt="Nathan Winklepleck" />
+      <p>{site.owner} | {site.youtubeStat}</p>
     </div>
-    <div class="card reveal delay-2" aria-hidden="true">
-      <p>Featured Services</p>
-      <ul>
-        <li>Social media consulting</li>
-        <li>Full-production videography</li>
-        <li>Business testimonials</li>
-        <li>Weddings and family events</li>
-      </ul>
+
+    <p class="kicker reveal delay-1">Videography and Social Strategy</p>
+    <h1 class="reveal delay-1">Media that makes your business look trustworthy from the first impression.</h1>
+    <p class="lead reveal delay-2">
+      Winklepleck Media combines creator-level storytelling with business-first execution, from testimonial films and
+      event coverage to strategic content that helps serious companies stand out.
+    </p>
+
+    <div class="actions reveal delay-2">
+      <a class="button primary" href="/contact">Book a Consultation</a>
+      <a class="button secondary" href="/portfolio">View Portfolio</a>
+    </div>
+
+    <div class="pills reveal delay-2" aria-label="Core services">
+      <span>Social Media Consulting</span>
+      <span>Full-Production Videography</span>
+      <span>Testimonial Films</span>
+      <span>Weddings & Events</span>
     </div>
   </div>
 </section>
 
 <style>
   .hero {
-    padding-top: 6.3rem;
+    padding-top: 5.5rem;
   }
 
-  .hero-grid {
-    display: grid;
-    align-items: start;
-    gap: 2rem;
-    grid-template-columns: 1.25fr 0.75fr;
+  .hero-shell {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background:
+      radial-gradient(90% 150% at 100% 0%, rgba(179, 131, 77, 0.2), rgba(179, 131, 77, 0) 60%),
+      rgba(255, 255, 255, 0.78);
+    box-shadow: var(--shadow-soft);
+    padding: clamp(1.2rem, 4vw, 2.5rem);
   }
 
   h1 {
-    margin: 0;
+    margin: 0.1rem 0 0;
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(2.4rem, 5.4vw, 5rem);
+    font-size: clamp(2.35rem, 6vw, 4.9rem);
     line-height: 0.98;
     letter-spacing: 0.01em;
+    max-width: 16ch;
   }
 
   .lead {
-    max-width: 58ch;
+    max-width: 64ch;
     margin-top: 1rem;
     color: var(--color-muted);
     font-size: 1.05rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.35rem 0.75rem 0.35rem 0.35rem;
+  }
+
+  .badge img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    object-fit: cover;
+  }
+
+  .badge p {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-muted);
   }
 
   .actions {
@@ -63,45 +92,32 @@ import { site } from "../data/site";
     gap: 0.75rem;
   }
 
-  .stat {
+  .pills {
     margin-top: 1rem;
-    font-size: 0.92rem;
-    color: var(--color-accent-deep);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .pills span {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.86);
+    padding: 0.4rem 0.72rem;
+    font-size: 0.82rem;
     font-weight: 700;
-  }
-
-  .card {
-    border-radius: var(--radius);
-    background: linear-gradient(155deg, #171512, #2b241d);
-    color: #f4ece2;
-    border: 1px solid #3f352c;
-    padding: 1.35rem;
-    box-shadow: var(--shadow-soft);
-  }
-
-  .card p {
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    font-size: 0.78rem;
-  }
-
-  .card ul {
-    margin: 0.8rem 0 0;
-    padding-left: 1rem;
-  }
-
-  .card li + li {
-    margin-top: 0.45rem;
+    color: var(--color-ink);
   }
 
   @media (max-width: 900px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
+    .hero {
+      padding-top: 4.5rem;
     }
 
-    .hero {
-      padding-top: 4.8rem;
+    .hero-shell {
+      padding: 1.1rem;
     }
   }
 </style>
